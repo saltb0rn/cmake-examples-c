@@ -1,0 +1,11 @@
+*** CMake Examples
+
+    This repository includes some examples CMake configurations I have made when learning CMake.
+
+    All examples written in C are inspired by [[https://github.com/ttroy50/cmake-examples][cmake-examples]], which includes examples written in CPP.
+
+    It's the best tutorial I ever seen on the internet (in my own opinion).
+
+    As a C programming beginner who has very limited knowledge of CPP programming,
+
+    I create this repository for the purpose of exploring the usages of CMake in C programming.

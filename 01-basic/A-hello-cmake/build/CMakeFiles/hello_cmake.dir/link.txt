@@ -1,0 +1,1 @@
+/mingw64/bin/cc.exe CMakeFiles/hello_cmake.dir/main.c.obj -o hello_cmake 
