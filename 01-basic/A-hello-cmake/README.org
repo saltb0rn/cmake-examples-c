@@ -1,25 +1,52 @@
-*** Notes
-
 **** References
 
      Please refer to [[https://github.com/ttroy50/cmake-examples/tree/master/01-basic/A-hello-cmake][this README]] to get the infomation about compiling this example and explanation of CMakeLists.txt.
 
 **** Exceptions I have met while playing with original example
 
-     When I'm compiled the original example on Windows with MSYS2, it gave me
+     When I'm compiled the original example on Windows with MSYS2, it gave me crash logs below:
 
+     #+BEGIN_SRC sh
+     $ make
+     Consolidate compiler generated dependencies of target hello_cmake
+     [ 50%] Building CXX object CMakeFiles/hello_cmake.dir/main.cpp.obj
+     [100%] Linking CXX executable hello_cmake
+     C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles/hello_cmake.dir/main.cpp.obj:main.cpp:(.text+0x29): undefined reference to `std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)'
+     C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles/hello_cmake.dir/main.cpp.obj:main.cpp:(.text+0x3b): undefined reference to `std::ostream::operator<<(std::ostream& (*)(std::ostream&))'
+     C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles/hello_cmake.dir/main.cpp.obj:main.cpp:(.text+0x5d): undefined reference to `std::ios_base::Init::~Init()'
+     C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles/hello_cmake.dir/main.cpp.obj:main.cpp:(.text+0x90): undefined reference to `std::ios_base::Init::Init()'
+     C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles/hello_cmake.dir/main.cpp.obj:main.cpp:(.rdata$.refptr._ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_[.refptr._ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_]+0x0): undefined reference to `std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)'
+     C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles/hello_cmake.dir/main.cpp.obj:main.cpp:(.rdata$.refptr._ZSt4cout[.refptr._ZSt4cout]+0x0): undefined reference to `std::cout'
+     collect2.exe: error: ld returned 1 exit status
+     make[2]: *** [CMakeFiles/hello_cmake.dir/build.make:97: hello_cmake] Error 1
+     make[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/hello_cmake.dir/all] Error 2
+     make: *** [Makefile:91: all] Error 2
+     #+END_SRC
 
-# # make
-# Consolidate compiler generated dependencies of target hello_cmake
-# [ 50%] Building CXX object CMakeFiles/hello_cmake.dir/main.cpp.obj
-# [100%] Linking CXX executable hello_cmake
-# C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles/hello_cmake.dir/main.cpp.obj:main.cpp:(.text+0x29): undefined reference to `std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)'
-# C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles/hello_cmake.dir/main.cpp.obj:main.cpp:(.text+0x3b): undefined reference to `std::ostream::operator<<(std::ostream& (*)(std::ostream&))'
-# C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles/hello_cmake.dir/main.cpp.obj:main.cpp:(.text+0x5d): undefined reference to `std::ios_base::Init::~Init()'
-# C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles/hello_cmake.dir/main.cpp.obj:main.cpp:(.text+0x90): undefined reference to `std::ios_base::Init::Init()'
-# C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles/hello_cmake.dir/main.cpp.obj:main.cpp:(.rdata$.refptr._ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_[.refptr._ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_]+0x0): undefined reference to `std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)'
-# C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles/hello_cmake.dir/main.cpp.obj:main.cpp:(.rdata$.refptr._ZSt4cout[.refptr._ZSt4cout]+0x0): undefined reference to `std::cout'
-# collect2.exe: error: ld returned 1 exit status
-# make[2]: *** [CMakeFiles/hello_cmake.dir/build.make:97: hello_cmake] Error 1
-# make[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/hello_cmake.dir/all] Error 2
-# make: *** [Makefile:91: all] Error 2
+     That's because the CMake variable =CMAKE_CXX_COMPILER= is set to =cc= by default, in MSYS2 =cc= is a link to =gcc=.
+
+     And of course =gcc= has the ability to compile CPP with =-lstdc++= flag, but it's not the default behavior.
+
+     There will be a problem when compiling a CPP program with a C compiler, it can solved by modifying the CMakeLists.txt like this:
+
+     #+BEGIN_SRC sh
+     # Set the minimum version of CMake that can be used
+     # To find the cmake version run
+     # $ cmake --version
+     cmake_minimum_required(VERSION 3.5)
+
+     # Set the project name
+     project (hello_cmake)
+
+     # Set CPP compiler to g++ manually
+     set(CMAKE_CXX_COMPILER g++)
+
+     # Add an executable
+     add_executable(hello_cmake main.cpp)
+     #+END_SRC
+
+     or leave the CMakeLists.txt unmodified, use CMake like this:
+
+     #+BEGIN_SRC sh
+     cmake -D CMAKE_CXX_COMPILER=g++ <path/to/src>
+     #+END_SRC
