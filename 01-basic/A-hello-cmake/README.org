@@ -1,6 +1,6 @@
 **** References
 
-     Please refer to [[https://github.com/ttroy50/cmake-examples/tree/master/01-basic/A-hello-cmake][this README]] to get the infomation about compiling this example and explanation of CMakeLists.txt.
+     Please refer to [[https://github.com/ttroy50/cmake-examples/tree/master/01-basic/A-hello-cmake][this README]] to get the information about compiling this example and explanation of CMakeLists.txt.
 
 **** Exceptions I have met while playing with original example
 
