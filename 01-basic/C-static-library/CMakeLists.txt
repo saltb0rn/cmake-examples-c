@@ -28,5 +28,3 @@ add_executable(hello_binary
 target_link_libraries(hello_binary PRIVATE
   hello_library
   )
-
-
