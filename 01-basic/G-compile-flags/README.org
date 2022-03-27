@@ -1,0 +1,3 @@
+**** References
+
+     Please refer to [[https://github.com/ttroy50/cmake-examples/tree/master/01-basic/G-compile-flags][this README]] to get the information about compiling this example and explanation of CMakeLists.txt.
