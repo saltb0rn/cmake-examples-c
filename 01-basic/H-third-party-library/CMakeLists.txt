@@ -6,6 +6,8 @@ project (third_party_include)
 # find a cJSON install with the libraries filesystem and system
 find_package(cJSON 1.7.15 REQUIRED COMPONENTS filesystem system)
 
+message("CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH}")
+
 if (cJSON_FOUND)
   message ("cJSON found")
 else()

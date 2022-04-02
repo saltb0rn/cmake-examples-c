@@ -1,0 +1,3 @@
+[submodule "01-basic/H-third-party-library/cJSON"]
+	path = 01-basic/H-third-party-library/cJSON
+	url = git@github.com:DaveGamble/cJSON.git
